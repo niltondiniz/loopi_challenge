@@ -1,0 +1,4 @@
+enum JobList {
+  actor,
+  director,
+}
