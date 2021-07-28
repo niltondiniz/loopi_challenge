@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_movie_cast_by_movie_id_usecase.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_movie_from_id_usecase.dart';
 import 'package:loopi_challenge/features/movies/presenter/controllers/detail_controller.dart';

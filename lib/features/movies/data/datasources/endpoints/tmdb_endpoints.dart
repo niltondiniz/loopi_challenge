@@ -16,4 +16,7 @@ class TheMovieDBEndpoint {
 
   static String movieMediaBaseUrl500Quality() =>
       "https://image.tmdb.org/t/p/w500";
+
+  static String genres(String apiKey) =>
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=$apiKey&language=pt-BR";
 }

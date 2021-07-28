@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:loopi_challenge/core/errors/exceptions.dart';
 import 'package:loopi_challenge/core/http_client/http_client.dart';
-import 'package:loopi_challenge/core/usecase/usecase.dart';
 import 'package:loopi_challenge/core/utils/keys/tmdb_api_keys.dart';
 import 'package:loopi_challenge/features/movies/data/datasources/endpoints/tmdb_endpoints.dart';
 import 'package:loopi_challenge/features/movies/data/models/movie_model.dart';

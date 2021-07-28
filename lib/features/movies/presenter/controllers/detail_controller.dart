@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:loopi_challenge/core/errors/failure.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
@@ -38,7 +37,10 @@ class DetailController extends NotifierStore<Failure, MovieEntity> {
 
     movieDetailResult.fold((error) => setError(error), (success) {
       success.credits?.insertAll(0, movieCast);
+      update(success);
     });
+
+    setLoading(false);
   }
 
   Future<List<PeopleEntity>> getCastFromMovieId(int id) async {
