@@ -27,15 +27,9 @@ class MoviePosterWidget extends StatelessWidget {
             ),
           ),
         ),
-        placeholder: (context, url) => SizedBox(
-          width: 130,
-          height: 150,
+        placeholder: (context, url) => Center(
           child: CircularProgressIndicator(
-            strokeWidth: 3,
-            valueColor: AlwaysStoppedAnimation<Color>(
-              Theme.of(context).accentColor,
-            ),
-            backgroundColor: Theme.of(context).accentColor,
+            color: Theme.of(context).accentColor,
           ),
         ),
         errorWidget: (context, url, error) => Icon(Icons.error),

@@ -5,6 +5,7 @@ import 'package:loopi_challenge/features/movies/data/models/movie_model.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_paginated_most_popular_movies_usecase.dart';
 
+// ignore: must_be_immutable
 class HomeController extends NotifierStore<Failure, List<MovieEntity>> {
   final GetPaginatedMostPopularMoviesUsecase usecase;
   HomeController(this.usecase)

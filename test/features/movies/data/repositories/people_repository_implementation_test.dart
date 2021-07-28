@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:loopi_challenge/core/errors/exceptions.dart';
 import 'package:loopi_challenge/core/errors/failure.dart';
 import 'package:loopi_challenge/features/movies/data/datasources/people_datasource.dart';
-import 'package:loopi_challenge/features/movies/data/datasources/people_datasource_implementation.dart';
 import 'package:loopi_challenge/features/movies/data/repositories/people_repository_implementation.dart';
 import 'package:mocktail/mocktail.dart';
 

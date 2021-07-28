@@ -4,10 +4,8 @@ import 'package:flutter_triple/flutter_triple.dart';
 
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
 import 'package:loopi_challenge/features/movies/presenter/controllers/home_controller.dart';
-import 'package:loopi_challenge/features/movies/presenter/widgets/item_text_space_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/loopi_sliver_appbar_widget.dart';
-import 'package:loopi_challenge/features/movies/presenter/widgets/movie_info_text_widget.dart';
-import 'package:loopi_challenge/features/movies/presenter/widgets/movie_poster_widget.dart';
+import 'package:loopi_challenge/features/movies/presenter/widgets/on_error_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/sliver_movie_item_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,12 +30,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       onLoading: (context) => Stack(
         children: [Center(child: CircularProgressIndicator())],
       ),
-      onError: (context, error) => Center(
-        child: Text(
-          'Ops! we have a problem, try again later.',
-          style: Theme.of(context).textTheme.caption,
-        ),
-      ),
+      onError: (context, error) => Center(child: OnErrorWidget()),
       onState: (context, List<MovieEntity> listMovieEntity) => Scaffold(
         body: CustomScrollView(
           controller: controller.scrollController,

@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:loopi_challenge/core/errors/failure.dart';
 import 'package:loopi_challenge/core/types/list_genres_list_movie_type.dart';
-import 'package:loopi_challenge/features/movies/domain/entities/genre_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/repositories/movie_repository.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_movies_from_chosen_genres_usecase.dart';
 import 'package:mocktail/mocktail.dart';

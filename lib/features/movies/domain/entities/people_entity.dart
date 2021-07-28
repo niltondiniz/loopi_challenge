@@ -6,13 +6,14 @@ class PeopleEntity extends Equatable {
   final String profilePath;
   final int order;
   final JobList job;
+  final int gender;
 
-  PeopleEntity({
-    required this.name,
-    required this.profilePath,
-    required this.order,
-    required this.job,
-  });
+  PeopleEntity(
+      {required this.name,
+      required this.profilePath,
+      required this.order,
+      required this.job,
+      required this.gender});
 
   @override
   List<Object?> get props => [
@@ -20,5 +21,6 @@ class PeopleEntity extends Equatable {
         profilePath,
         order,
         job,
+        gender,
       ];
 }

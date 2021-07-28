@@ -1,4 +1,3 @@
-import 'package:loopi_challenge/features/movies/data/datasources/endpoints/tmdb_endpoints.dart';
 import 'package:loopi_challenge/features/movies/data/models/genre_model.dart';
 import 'package:loopi_challenge/features/movies/data/models/production_country_model.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
