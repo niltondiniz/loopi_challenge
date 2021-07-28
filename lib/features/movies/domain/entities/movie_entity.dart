@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:loopi_challenge/features/movies/domain/entities/people_entity.dart';
 
 import 'genre_entity.dart';
 import 'production_country_entity.dart';
@@ -15,6 +16,7 @@ class MovieEntity extends Equatable {
   final String? releaseDate;
   final List<GenreEntity>? genres;
   final List<ProductionCountryEntity>? productionCountries;
+  final List<PeopleEntity>? credits;
   final String? overview;
   final int? budget;
   final int? revenue;
@@ -40,6 +42,7 @@ class MovieEntity extends Equatable {
     required this.runtime,
     required this.status,
     required this.genreIds,
+    required this.credits,
   });
 
   @override
@@ -60,6 +63,7 @@ class MovieEntity extends Equatable {
         revenue,
         runtime,
         status,
-        genreIds
+        genreIds,
+        credits,
       ];
 }

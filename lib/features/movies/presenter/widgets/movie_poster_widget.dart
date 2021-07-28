@@ -2,38 +2,44 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loopi_challenge/features/movies/data/datasources/endpoints/tmdb_endpoints.dart';
 
-class MoviePoster extends StatelessWidget {
+class MoviePosterWidget extends StatelessWidget {
   final String posterUrl;
-  const MoviePoster({
+  final int id;
+  const MoviePosterWidget({
     Key? key,
     required this.posterUrl,
+    required this.id,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: TheMovieDBEndpoint.movieMediaBaseUrl() + this.posterUrl,
-      imageBuilder: (context, imageProvider) => Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
-          image: DecorationImage(
-            image: imageProvider,
-            fit: BoxFit.cover,
+    return Hero(
+      tag: id,
+      child: CachedNetworkImage(
+        imageUrl:
+            TheMovieDBEndpoint.movieMediaBaseUrl500Quality() + this.posterUrl,
+        imageBuilder: (context, imageProvider) => Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(3),
+            image: DecorationImage(
+              image: imageProvider,
+              fit: BoxFit.fitHeight,
+            ),
           ),
         ),
-      ),
-      placeholder: (context, url) => SizedBox(
-        width: 130,
-        height: 150,
-        child: CircularProgressIndicator(
-          strokeWidth: 3,
-          valueColor: AlwaysStoppedAnimation<Color>(
-            Theme.of(context).accentColor,
+        placeholder: (context, url) => SizedBox(
+          width: 130,
+          height: 150,
+          child: CircularProgressIndicator(
+            strokeWidth: 3,
+            valueColor: AlwaysStoppedAnimation<Color>(
+              Theme.of(context).accentColor,
+            ),
+            backgroundColor: Theme.of(context).accentColor,
           ),
-          backgroundColor: Theme.of(context).accentColor,
         ),
+        errorWidget: (context, url, error) => Icon(Icons.error),
       ),
-      errorWidget: (context, url, error) => Icon(Icons.error),
     );
   }
 }

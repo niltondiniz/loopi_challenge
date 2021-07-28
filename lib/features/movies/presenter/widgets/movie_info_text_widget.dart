@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MovieInfoText extends StatelessWidget {
+class MovieInfoTextWidget extends StatelessWidget {
   final String label;
   final String value;
-  const MovieInfoText({
+  const MovieInfoTextWidget({
     Key? key,
     required this.label,
     required this.value,

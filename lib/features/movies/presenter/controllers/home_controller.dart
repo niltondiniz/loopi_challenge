@@ -26,10 +26,11 @@ class HomeController extends NotifierStore<Failure, List<MovieEntity>> {
               revenue: 0,
               runtime: 0,
               status: '',
-              genreIds: null)
+              genreIds: null,
+              credits: null)
         ]);
 
-  List<MovieModel> movieList = [];
+  final List<MovieModel> movieList = [];
   int loadedPages = 0;
   ScrollController scrollController = new ScrollController();
 

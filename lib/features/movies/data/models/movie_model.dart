@@ -2,6 +2,7 @@ import 'package:loopi_challenge/features/movies/data/datasources/endpoints/tmdb_
 import 'package:loopi_challenge/features/movies/data/models/genre_model.dart';
 import 'package:loopi_challenge/features/movies/data/models/production_country_model.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
+import 'package:loopi_challenge/features/movies/domain/entities/people_entity.dart';
 
 class MovieModel extends MovieEntity {
   MovieModel(
@@ -21,7 +22,8 @@ class MovieModel extends MovieEntity {
       required int? revenue,
       required int? runtime,
       required status,
-      required genreIds})
+      required genreIds,
+      required List<PeopleEntity>? credits})
       : super(
             id: id,
             backdropPath: backdropPath,
@@ -39,7 +41,8 @@ class MovieModel extends MovieEntity {
             revenue: revenue,
             runtime: runtime,
             status: status,
-            genreIds: genreIds);
+            genreIds: genreIds,
+            credits: credits);
 
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
         backdropPath: json['backdrop_path'] as String?,
@@ -68,6 +71,7 @@ class MovieModel extends MovieEntity {
         genreIds: (json['genre_ids'] as List<dynamic>?)
             ?.map((e) => e as int)
             .toList(),
+        credits: [],
       );
 
   Map<String, dynamic> toJson() => {

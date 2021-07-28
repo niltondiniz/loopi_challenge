@@ -31,7 +31,7 @@ void main() {
 
     //Assert
     controller.observer(onState: (state) {
-      expect(state, listMovieMock);
+      expect(state, tMovieEntity);
       verify(() => usecase(page)).called(1);
     });
   });

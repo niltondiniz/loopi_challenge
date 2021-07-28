@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ItemTextSpace extends StatelessWidget {
-  const ItemTextSpace({
+class ItemTextSpaceWidget extends StatelessWidget {
+  const ItemTextSpaceWidget({
     Key? key,
   }) : super(key: key);
 

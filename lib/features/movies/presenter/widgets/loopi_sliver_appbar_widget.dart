@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoopiSliverAppBar extends StatelessWidget {
-  const LoopiSliverAppBar({
+class LoopiSliverAppBarWidget extends StatelessWidget {
+  const LoopiSliverAppBarWidget({
     Key? key,
   }) : super(key: key);
 
@@ -15,10 +15,8 @@ class LoopiSliverAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         titlePadding: EdgeInsets.only(left: 8, bottom: 8, right: 8),
         centerTitle: true,
-        background: Expanded(
-          child: Container(
-            color: Theme.of(context).primaryColor,
-          ),
+        background: Container(
+          color: Theme.of(context).primaryColor,
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
