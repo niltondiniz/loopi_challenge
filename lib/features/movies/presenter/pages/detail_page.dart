@@ -71,7 +71,7 @@ class _DetailPageState extends ModularState<DetailPage, DetailController> {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Container(
-                                  width: 200,
+                                  width: 100,
                                   child: Text(
                                     controller.getGenres(movie.genres!),
                                     maxLines: 5,
