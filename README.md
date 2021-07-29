@@ -63,3 +63,21 @@ Os seguinte recursos estão presentes no App
 
 Devido aos compromissos que já possuia na semana do desafio precisei de mais prazo para desenvolvimento do mesmo, busquei me esforçar ao máximo para manter um prazo razoável. A idéia proposta no desafio foi muito interessante ao ponto que eu mudei minha apresentação (Na Radix) para usar a ideia do app de filmes, a diferença que o app da apresentação foi desenvolvido em 2 horas devido a baixa complexidade, se propunha a listar os dados da api somente em uma ListView, e mostrar na tela de detalhes, já o app do desafio foi desenvolvido com base em todo critério de um app profissional com padrão de qualidade de código, ampla cobertura de testes unitários, baixo acoplamento, organização de código, limitações arquiteturais positivas respeitando os principios de OO.
 
+## Screenshots
+
+#### Lista de Filmes
+<div align="center">
+  <img src="/screenshots/movie_list.png" width="400px"</img> 
+</div>
+#### Detalhes (1)
+<div align="center">
+  <img src="/screenshots/detail_1.png" width="400px"</img> 
+</div>
+#### Detalhes (2)
+<div align="center">
+  <img src="/screenshots/detail_2.png" width="400px"</img> 
+</div>
+#### Filtros
+<div align="center">
+  <img src="/screenshots/filter.png" width="400px"</img> 
+</div>
