@@ -50,12 +50,15 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            controller.filters = await Navigator.push(
+            var filters = await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => FilterPage(),
               ),
             );
+
+            controller.filters = filters != null ? filters : [];
+
             controller.getMostPopularMovies(page: 1, useStateData: false);
           },
           splashColor: Color(0xFFB44692),
