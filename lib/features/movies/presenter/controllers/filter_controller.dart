@@ -4,6 +4,7 @@ import 'package:loopi_challenge/core/usecase/usecase.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/genre_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_movie_genres.dart';
 
+// ignore: must_be_immutable
 class FilterController extends NotifierStore<Failure, List<GenreEntity>> {
   final GetMovieGenres usecase;
 
