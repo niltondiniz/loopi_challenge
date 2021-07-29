@@ -15,7 +15,7 @@ class DetailInfoWidget extends StatelessWidget {
       children: [
         Text(
           value,
-          style: Theme.of(context).textTheme.headline1,
+          style: Theme.of(context).textTheme.headline3,
         ),
         Text(
           label,

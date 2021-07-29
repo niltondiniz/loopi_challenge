@@ -9,6 +9,7 @@ import 'package:loopi_challenge/features/movies/presenter/widgets/detail_backgro
 import 'package:loopi_challenge/features/movies/presenter/widgets/detail_info_row_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/detail_movie_poster_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/detail_background_gradiente.dart';
+import 'package:loopi_challenge/features/movies/presenter/widgets/director_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/green_title_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/on_error_widget.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/vertical_space_widget.dart';
@@ -60,7 +61,30 @@ class _DetailPageState extends ModularState<DetailPage, DetailController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         VerticalSpaceWidget(height: 180),
-                        DetailMoviePosterWidget(movie: movie),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            DetailMoviePosterWidget(movie: movie),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: 200,
+                                  child: Text(
+                                    controller.getGenres(movie.genres!),
+                                    maxLines: 5,
+                                    overflow: TextOverflow.ellipsis,
+                                    style:
+                                        Theme.of(context).textTheme.bodyText1,
+                                    textAlign: TextAlign.right,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                         VerticalSpaceWidget(height: 16),
                         Text(
                           widget.movie.title!,
@@ -74,15 +98,22 @@ class _DetailPageState extends ModularState<DetailPage, DetailController> {
                           height: 32,
                         ),
                         DetailInfoRowWidget(movie: movie),
-                        VerticalSpaceWidget(height: 50),
-                        WhiteTitleWidget(text: "Elenco"),
+                        VerticalSpaceWidget(height: 32),
+                        WhiteTitleWidget(text: "Cast"),
                         VerticalSpaceWidget(height: 16),
                         Container(
-                          height: 180,
+                          height: 150,
                           child: CastWidget(movieCast: movie.credits!),
                         ),
                         VerticalSpaceWidget(height: 16),
-                        GreenTitleWidget(text: "Sinopse"),
+                        WhiteTitleWidget(text: "Director"),
+                        VerticalSpaceWidget(height: 16),
+                        Container(
+                          height: 150,
+                          child: DirectorWidget(movieCast: movie.credits!),
+                        ),
+                        VerticalSpaceWidget(height: 16),
+                        GreenTitleWidget(text: "Synopsis"),
                         VerticalSpaceWidget(height: 16),
                         Text(
                           widget.movie.overview!,

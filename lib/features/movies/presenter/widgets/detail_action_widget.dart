@@ -17,7 +17,10 @@ class DetailActionWidget extends StatelessWidget {
       onTap: action,
       child: Column(
         children: [
-          Icon(icon),
+          Icon(
+            icon,
+            color: Colors.white70,
+          ),
           Text(
             text,
             style: Theme.of(context).textTheme.button,

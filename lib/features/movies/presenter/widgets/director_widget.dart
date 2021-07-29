@@ -4,35 +4,35 @@ import 'package:loopi_challenge/core/enums/job_enum.dart';
 import 'package:loopi_challenge/features/movies/data/datasources/endpoints/tmdb_endpoints.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/people_entity.dart';
 
-class CastWidget extends StatefulWidget {
+class DirectorWidget extends StatefulWidget {
   final List<PeopleEntity> movieCast;
-  const CastWidget({Key? key, required this.movieCast}) : super(key: key);
+  const DirectorWidget({Key? key, required this.movieCast}) : super(key: key);
 
   @override
-  _CastWidgetState createState() => _CastWidgetState();
+  _DirectorWidgetState createState() => _DirectorWidgetState();
 }
 
-class _CastWidgetState extends State<CastWidget> {
-  List<PeopleEntity> getCast() {
-    List<PeopleEntity> cast =
-        widget.movieCast.where((e) => e.job == JobList.actor).toList();
-    return cast;
+class _DirectorWidgetState extends State<DirectorWidget> {
+  List<PeopleEntity> getDirectorList() {
+    List<PeopleEntity> directorList =
+        widget.movieCast.where((e) => e.job == JobList.director).toList();
+    return directorList;
   }
 
   @override
   Widget build(BuildContext context) {
-    var cast = getCast();
+    List<PeopleEntity> directorList = getDirectorList();
 
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: cast.length,
+        itemCount: directorList.length,
         itemBuilder: (BuildContext context, int index) {
-          print("url: " + cast[index].profilePath);
+          print("url: " + directorList[index].profilePath);
 
-          var actorPicture = cast[index].profilePath == ''
+          var actorPicture = directorList[index].profilePath == ''
               ? 'https://appvital.com/images/profile/file-uploader-api-profile-avatar-2.jpg'
               : TheMovieDBEndpoint.movieMediaBaseUrl185Quality() +
-                  cast[index].profilePath;
+                  directorList[index].profilePath;
 
           return Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -55,7 +55,7 @@ class _CastWidgetState extends State<CastWidget> {
                   width: 100,
                   child: Center(
                     child: Text(
-                      cast[index].name,
+                      directorList[index].name,
                       style: Theme.of(context).textTheme.button,
                       overflow: TextOverflow.fade,
                       maxLines: 2,
@@ -65,8 +65,8 @@ class _CastWidgetState extends State<CastWidget> {
                 ),
                 Center(
                   child: Text(
-                    cast[index].job == JobList.actor
-                        ? cast[index].gender == 1
+                    directorList[index].job == JobList.actor
+                        ? directorList[index].gender == 1
                             ? "Atriz"
                             : "Ator"
                         : "Diretor",

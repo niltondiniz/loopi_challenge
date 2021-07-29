@@ -35,13 +35,20 @@ class MovieRepositoryImplementation implements IMovieRepository {
   @override
   Future<Either<Failure, List<MovieEntity>>> getMoviesFromChosenGenres(
       ListGenresListMovies param) async {
+    List<MovieEntity> result;
+
     try {
-      final result = param.genres
-          .map((genre) => param.moviesToFilter
-              .where((movie) => (movie.genreIds as List).contains(genre))
-              .toList())
-          .expand((result) => result)
-          .toList();
+      if (param.genres.length > 0) {
+        result = param.genres
+            .map((genre) => param.moviesToFilter
+                .where((movie) => (movie.genreIds as List).contains(genre))
+                .toList())
+            .expand((result) => result)
+            .toSet()
+            .toList();
+      } else {
+        result = param.moviesToFilter;
+      }
 
       return Right(result);
     } on ServerException {

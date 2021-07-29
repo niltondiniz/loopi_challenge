@@ -53,7 +53,7 @@ class AppWidget extends StatelessWidget {
           headline3: TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.w400,
-            color: Colors.white,
+            color: Colors.white70,
           ),
           caption: TextStyle(
             fontSize: 11.0,
@@ -63,7 +63,7 @@ class AppWidget extends StatelessWidget {
           button: TextStyle(
             fontSize: 13.0,
             fontWeight: FontWeight.normal,
-            color: Colors.white,
+            color: Colors.white70,
           ),
         ),
       ),

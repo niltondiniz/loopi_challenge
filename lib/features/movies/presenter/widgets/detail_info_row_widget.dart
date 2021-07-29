@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loopi_challenge/core/converters/converters.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
 import 'package:loopi_challenge/features/movies/presenter/widgets/detail_action_widget.dart';
 
@@ -14,8 +15,8 @@ class DetailInfoRowWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         DetailInfoWidget(
-          value: movie.releaseDate!,
-          label: "Lançamento",
+          value: Converter.stringDateYMDToDMY(movie.releaseDate!),
+          label: "Release",
         ),
         DetailActionWidget(
           text: movie.runtime.toString() + "Min",
@@ -23,12 +24,15 @@ class DetailInfoRowWidget extends StatelessWidget {
           action: () {},
         ),
         DetailInfoWidget(
-          value: "\$" + (movie.budget! / 1000000).round().toString() + "M",
-          label: "Orçamento",
+          value:
+              "\$" + (movie.budget! / 1000000).roundToDouble().toString() + "M",
+          label: "Budget",
         ),
         DetailInfoWidget(
-          value: "\$" + (movie.revenue! / 1000000).round().toString() + "M",
-          label: "Bilheteria",
+          value: "\$" +
+              (movie.revenue! / 1000000).roundToDouble().toString() +
+              "M",
+          label: "Revenue",
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter_triple/flutter_triple.dart';
 import 'package:loopi_challenge/core/errors/failure.dart';
+import 'package:loopi_challenge/features/movies/domain/entities/genre_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/movie_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/entities/people_entity.dart';
 import 'package:loopi_challenge/features/movies/domain/usecases/get_movie_cast_by_movie_id_usecase.dart';
@@ -41,6 +42,15 @@ class DetailController extends NotifierStore<Failure, MovieEntity> {
     });
 
     setLoading(false);
+  }
+
+  String getGenres(List<GenreEntity> genresList) {
+    String genres = "";
+    for (var item in genresList) {
+      genres = genres + " " + item.name;
+    }
+
+    return genres;
   }
 
   Future<List<PeopleEntity>> getCastFromMovieId(int id) async {
