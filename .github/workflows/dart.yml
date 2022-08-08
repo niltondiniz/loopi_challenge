@@ -28,3 +28,8 @@ jobs:
     - run: flutter test
     - run: flutter build apk
     - run: flutter build appbundle
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.0
+      with:        
+        name: app.apk
+        path: .artifacts/
